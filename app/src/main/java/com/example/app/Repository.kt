@@ -19,7 +19,7 @@ class Repository(){
 //        database.addValue(name)
 //    }
 
-    fun getList() :  LiveData<List<UserData>> = database.getList()
+    fun getList() :  ArrayList<UserData> = database.getList()
 
 
 //    fun removeItem(x: Int){

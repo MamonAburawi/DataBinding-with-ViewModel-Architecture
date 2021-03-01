@@ -13,8 +13,8 @@ class DataBase() {
 
 
 
-    private val _list =  MutableLiveData<List<UserData>>()
-    private val list :LiveData<List<UserData>> = _list
+ private  var userData = ArrayList<UserData>()
+
 
 
 
@@ -29,13 +29,13 @@ class DataBase() {
         newList.add(UserData(1,"Osama"))
         newList.add(UserData(1,"Ali"))
         newList.add(UserData(1,"zedan"))
-        _list.value = newList
+        userData = newList
     }
 
 
 
-    fun getList() :  LiveData<List<UserData>>{
-        return list
+    fun getList() :  ArrayList<UserData>{
+        return userData
     }
 
     fun setName(value : String){

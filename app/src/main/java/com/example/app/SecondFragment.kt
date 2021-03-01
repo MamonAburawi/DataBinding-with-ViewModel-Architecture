@@ -33,18 +33,6 @@ class SecondFragment : Fragment() {
 
 
 
-//        shareViewModel.userList.observe(viewLifecycleOwner, Observer {
-//            if(it == null){
-//                Toast.makeText(activity,"empty", Toast.LENGTH_SHORT).show()
-//            }else{
-//                binding.recyclerView.adapter = UserAdapter(UserClickListener { userData ->
-//                    Toast.makeText(activity,"id = ${userData.id}", Toast.LENGTH_SHORT).show()
-//                })
-//
-//            }
-//        })
-
-
 
 
 

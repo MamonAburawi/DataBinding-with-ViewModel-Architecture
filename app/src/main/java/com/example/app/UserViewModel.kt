@@ -18,8 +18,8 @@ class UserViewModel() : ViewModel() {
 
 
 
-    private val _userList = MutableLiveData<List<UserData>>()
-    val userList : LiveData<List<UserData>>
+    private val _userList = MutableLiveData<ArrayList<UserData>>()
+    val userList : LiveData<ArrayList<UserData>>
         get() = _userList
 
 
@@ -86,9 +86,9 @@ class UserViewModel() : ViewModel() {
 //        }
 //    }
 
-    fun updateList(){
+    private fun updateList(){
         viewModelScope.launch {
-            _userList.value = repository.getList().value
+            _userList.value = repository.getList()
         }
     }
 

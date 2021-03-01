@@ -16,7 +16,7 @@ import kotlin.coroutines.coroutineContext
 }
 
 @BindingAdapter("dataList")
-fun recyclerViewUser(recyclerView: RecyclerView , userData: List<UserData?>){
+fun recyclerViewUser(recyclerView: RecyclerView , userData: ArrayList<UserData?>){
     val adapter = recyclerView.adapter as UserAdapter
     adapter.submitList(userData)
 }

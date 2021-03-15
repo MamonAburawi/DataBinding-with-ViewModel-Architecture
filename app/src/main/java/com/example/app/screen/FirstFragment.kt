@@ -1,4 +1,4 @@
-package com.example.app
+package com.example.app.screen
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,11 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.app.FirstFragmentDirections
+import com.example.app.R
+import com.example.app.adapter.UserAdapter
 import com.example.app.databinding.FragmentFirstBinding
+import com.example.app.viewmodel.UserViewModel
 
 class FirstFragment : Fragment() {
 
@@ -26,7 +29,7 @@ class FirstFragment : Fragment() {
 
 
 
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_first,container,false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_first,container,false)
 
 
         viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
@@ -44,7 +47,11 @@ class FirstFragment : Fragment() {
 
         viewModel.navigateToSelectedProperty.observe(viewLifecycleOwner, Observer {
             if(it != null){ // here we check if the navigateToSelectedProperty is not == null will navigate to next fragment.
-                this.findNavController().navigate(FirstFragmentDirections.actionFirstFragmentToSecondFragment(it))
+                this.findNavController().navigate(
+                    FirstFragmentDirections.actionFirstFragmentToSecondFragment(
+                        it
+                    )
+                )
                 viewModel.navigateToSelectedPropertyCompleted()
             }
         })

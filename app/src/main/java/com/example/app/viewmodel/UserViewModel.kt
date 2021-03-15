@@ -1,9 +1,10 @@
-package com.example.app
+package com.example.app.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.navigation.NavController
+import com.example.app.repository.Repository
+import com.example.app.model.UserData
 import kotlinx.coroutines.*
 
 @Suppress("CAST_NEVER_SUCCEEDS")

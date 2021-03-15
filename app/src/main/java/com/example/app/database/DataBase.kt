@@ -1,7 +1,8 @@
-package com.example.app
+package com.example.app.database
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.app.model.UserData
 
 @Suppress("UNUSED_CHANGED_VALUE")
 class DataBase() {

@@ -1,17 +1,17 @@
-package com.example.app
+package com.example.app.adapter
 
-import android.content.Context
-import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.app.model.UserData
 import com.example.app.databinding.SingleRowBinding
 
 
-class UserAdapter(private val clickListener : ClickListener) : ListAdapter<UserData,UserAdapter.ViewHolder>(DiffCallback) {
+class UserAdapter(private val clickListener : ClickListener) : ListAdapter<UserData, UserAdapter.ViewHolder>(
+    DiffCallback
+) {
 
 
    class ViewHolder(private val binding:  SingleRowBinding) : RecyclerView.ViewHolder(binding.root) {

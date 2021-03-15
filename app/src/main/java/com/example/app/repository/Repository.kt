@@ -1,7 +1,8 @@
-package com.example.app
+package com.example.app.repository
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import com.example.app.model.UserData
+import com.example.app.database.DataBase
 
 
 class Repository(){

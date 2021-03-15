@@ -16,7 +16,10 @@ import com.example.app.databinding.FragmentFirstBinding
 class FirstFragment : Fragment() {
 
     private lateinit var binding : FragmentFirstBinding
-    private  val shareViewModel : UserViewModel by activityViewModels() // use activityViewModels to you can user the view Model in many fragments ..
+//    private  val shareViewModel : UserViewModel by activityViewModels() // use activityViewModels to you can user the view Model in many fragments ..
+
+
+    private lateinit var viewModel : UserViewModel
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -26,22 +29,23 @@ class FirstFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_first,container,false)
 
 
+        viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
 
-        binding.userViewModel = shareViewModel
+        binding.userViewModel = viewModel
         binding.lifecycleOwner = this
 
 
         binding.recyclerView.adapter = UserAdapter(UserAdapter.ClickListener{
-            shareViewModel.navigateToSelectedProperty(it)
+            viewModel.navigateToSelectedProperty(it)
             Toast.makeText(activity,"click",Toast.LENGTH_SHORT).show()
         })
 
 
-        shareViewModel.navigateToSelectedProperty.observe(viewLifecycleOwner, Observer {
+        viewModel.navigateToSelectedProperty.observe(viewLifecycleOwner, Observer {
             if(it != null){ // here we check if the navigateToSelectedProperty is not == null will navigate to next fragment.
                 this.findNavController().navigate(FirstFragmentDirections.actionFirstFragmentToSecondFragment(it))
-                shareViewModel.navigateToSelectedPropertyCompleted()
+                viewModel.navigateToSelectedPropertyCompleted()
             }
         })
 

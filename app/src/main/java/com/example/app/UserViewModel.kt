@@ -13,9 +13,6 @@ class UserViewModel() : ViewModel() {
 
     val name: LiveData<String> = repository.getName()
 
-//    private val pictureListLive: MutableLiveData<ArrayList<String>> = MutableLiveData()
-//    val list : LiveData<ArrayList<String>> = pictureListLive
-
 
 
     private val _userList = MutableLiveData<ArrayList<UserData>>()
@@ -33,12 +30,6 @@ class UserViewModel() : ViewModel() {
 
 
 
-//    private val _userList: MutableLiveData<ArrayList<UserData>> = MutableLiveData()
-//    val userList : LiveData<ArrayList<UserData>>
-//    get() = _userList
-//
-
-
     init {
         val newList = ArrayList<UserData>()
         newList.add(UserData(1,"mamon"))
@@ -50,7 +41,6 @@ class UserViewModel() : ViewModel() {
         newList.add(UserData(7,"Ali"))
         newList.add(UserData(8,"zedan"))
         _userList.value = newList
-//        updateList()
     }
 
 
@@ -63,28 +53,6 @@ class UserViewModel() : ViewModel() {
         _navigateToSelectedProperty.value = null
     }
 
-//    private val list : ArrayList<String> = repository.getList()
-
-//    val list : LiveData<ArrayList<String>> = repository.getList() as LiveData<ArrayList<String>>
-
-//    @JvmName("getList1")
-//    fun getList() :  ArrayList<String>{
-//        return list
-//    }
-
-//    fun setName(value: String){
-//        viewModelScope.launch {
-//            repository.setName(value)
-//        }
-//
-//    }
-
-//    fun setValue(name: String){
-//        viewModelScope.launch {
-//            repository.setValue(name)
-//            updateList()
-//        }
-//    }
 
     private fun updateList(){
         viewModelScope.launch {

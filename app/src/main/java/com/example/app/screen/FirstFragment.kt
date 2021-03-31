@@ -10,7 +10,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.app.FirstFragmentDirections
 import com.example.app.R
 import com.example.app.adapter.UserAdapter
 import com.example.app.databinding.FragmentFirstBinding
@@ -47,11 +46,7 @@ class FirstFragment : Fragment() {
 
         viewModel.navigateToSelectedProperty.observe(viewLifecycleOwner, Observer {
             if(it != null){ // here we check if the navigateToSelectedProperty is not == null will navigate to next fragment.
-                this.findNavController().navigate(
-                    FirstFragmentDirections.actionFirstFragmentToSecondFragment(
-                        it
-                    )
-                )
+                this.findNavController().navigate(FirstFragmentDirections.actionFirstFragmentToSecondFragment(it))
                 viewModel.navigateToSelectedPropertyCompleted()
             }
         })

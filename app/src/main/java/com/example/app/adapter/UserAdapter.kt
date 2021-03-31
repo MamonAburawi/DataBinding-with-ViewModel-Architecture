@@ -9,9 +9,7 @@ import com.example.app.model.UserData
 import com.example.app.databinding.SingleRowBinding
 
 
-class UserAdapter(private val clickListener : ClickListener) : ListAdapter<UserData, UserAdapter.ViewHolder>(
-    DiffCallback
-) {
+class UserAdapter(private val clickListener : ClickListener) : ListAdapter<UserData, UserAdapter.ViewHolder>(DiffCallback) {
 
 
    class ViewHolder(private val binding:  SingleRowBinding) : RecyclerView.ViewHolder(binding.root) {

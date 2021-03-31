@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.app.R
-import com.example.app.SecondFragmentArgs
 import com.example.app.databinding.FragmentSecondBinding
 
 class SecondFragment : Fragment() {

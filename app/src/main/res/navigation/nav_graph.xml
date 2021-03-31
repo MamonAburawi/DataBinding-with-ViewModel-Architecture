@@ -21,6 +21,6 @@
         tools:layout="@layout/fragment_second" >
         <argument
             android:name="userData"
-            app:argType="com.example.app.UserData" />
+            app:argType="com.example.app.model.UserData" />
     </fragment>
 </navigation>
